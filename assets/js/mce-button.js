@@ -89,9 +89,9 @@
                             }
                         },
                         {
-                            text: 'Recent Posts Carousel',
+                            text: 'Staff Posts Tables',
                             onclick: function() {
-                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
+                                editor.insertContent('[staff_tables category="" posts="2" ptype=""]');
                             }
                         },
                     ]
