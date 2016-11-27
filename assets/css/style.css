@@ -12,6 +12,9 @@ img {
     position: relative;
 }
 
+.staff-list .caption p, .staff-list .caption h3 {
+    margin-bottom: 5px;
+}
 .caption-fixedh:after {
     display: block;
     content: "";

@@ -66,6 +66,29 @@
                             }
                         },
                         {
+                            text: 'Recent Posts Thumbnails',
+                            onclick: function() {
+                                editor.insertContent('[thumb_recent_posts class="" column="" category="" posts="2" ptype=""]');
+                            }
+                        },
+                        {
+                            text: 'Recent Posts Carousel',
+                            onclick: function() {
+                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
+                            }
+                        },
+                    ]
+                },
+                {
+                    text: 'Staff Posts',
+                    menu: [
+                        {
+                            text: 'Staff Posts Thumbnails',
+                            onclick: function() {
+                                editor.insertContent('[staff_posts class="" column="" category="" posts="2" ptype=""]');
+                            }
+                        },
+                        {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
                                 editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
