@@ -218,6 +218,7 @@ function staff_posts( $atts ) {
         'ptype' => '',
         'class' => '',
         'column' => '',
+        'role' => '',
     ), $atts ) );
 
     $class = $atts['class'];
@@ -227,7 +228,8 @@ function staff_posts( $atts ) {
     $options = array(
         'posts_per_page' => $posts,
         'post_type' => $ptype,
-        'category_name' => $category
+        'category_name' => $category,
+        'role' => $role,
     );
     $query = new WP_Query( $options );
     // run the loop based on the query
@@ -288,6 +290,7 @@ function staff_tables( $atts ) {
         'posts' => 4,
         'category' => '',
         'ptype' => '',
+        'role' => '',
     ), $atts ) );
 
 
@@ -295,7 +298,8 @@ function staff_tables( $atts ) {
     $options = array(
         'posts_per_page' => $posts,
         'post_type' => $ptype,
-        'category_name' => $category
+        'category_name' => $category,
+        'role' => $role,
     );
     $query = new WP_Query( $options );
     // run the loop based on the query
