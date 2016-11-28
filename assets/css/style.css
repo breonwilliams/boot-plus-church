@@ -212,3 +212,9 @@ img {
     background-position: 50% 50%;
     background-attachment: fixed;
 }
+
+.sermonList-wrap {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
