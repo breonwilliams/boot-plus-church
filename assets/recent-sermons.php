@@ -118,36 +118,43 @@ function sermon_tables( $atts ) {
     // run the loop based on the query
     if ( $query->have_posts() ) { ?>
 
-        <ul class="sermonList-wrap">
+        <ul class="respList-wrap">
 
 
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                <li class="sermonsList">
+                <li class="resplist-item">
                     <div class="row">
-                        <div class="col-sm-3"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></div>
-                        <div class="col-sm-3">
-                            <?php if( get_field('scripture') ): ?>
-                                <p><em><?php the_field('scripture'); ?></em></p>
-                            <?php endif; ?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></div>
+                                <div class="col-sm-6">
+                                    <?php if( get_field('scripture') ): ?>
+                                        <p><em><?php the_field('scripture'); ?></em></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <?php if( get_field('speaker') ): ?>
-                                <p><?php the_field('speaker'); ?></p>
-                            <?php endif; ?>
-                        </div>
-                        <div class="col-sm-3">
-                            <?php if( get_field('video') ): ?>
-                                <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Video <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
-                            <?php endif; ?>
-                            <?php if( get_field('audio') ): ?>
-                                <a href="<?php the_field('audio'); ?>" data-lity class="btn btn-bordered btn-primary btn-sm marginbot-15">Audio <i class="fa fa-headphones" aria-hidden="true"></i></a>
-                            <?php endif; ?>
-                            <?php if( get_field('document') ): ?>
-                                <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>
-                            <?php endif; ?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <?php if( get_field('speaker') ): ?>
+                                        <p><?php the_field('speaker'); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-sm-6">
+                                    <?php if( get_field('video') ): ?>
+                                        <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Video <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
+                                    <?php endif; ?>
+                                    <?php if( get_field('audio') ): ?>
+                                        <a href="<?php the_field('audio'); ?>" data-lity class="btn btn-bordered btn-primary btn-sm marginbot-15">Audio <i class="fa fa-headphones" aria-hidden="true"></i></a>
+                                    <?php endif; ?>
+                                    <?php if( get_field('document') ): ?>
+                                        <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </li>
             <?php endwhile;
             wp_reset_postdata(); ?>

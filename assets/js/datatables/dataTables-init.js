@@ -10,7 +10,7 @@ jQuery(function ($) {
         "autoWidth": true,
         "responsive": true,
         "buttons": [
-          
+
         ]
       }
   );
