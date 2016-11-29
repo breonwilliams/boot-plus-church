@@ -10,9 +10,7 @@ jQuery(function ($) {
         "autoWidth": true,
         "responsive": true,
         "buttons": [
-          'colvis',
-          'pdfHtml5',
-          'print',
+          
         ]
       }
   );
