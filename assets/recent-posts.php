@@ -395,7 +395,7 @@ function sermon_datatables( $atts ) {
     <thead>
       <tr>
         <th class="col-md-3">Sermon Title</th>
-        <th class="col-md-3">Book</th>
+        <th class="col-md-3">Scripture</th>
         <th class="col-md-3">Speaker</th>
         <th class="col-md-3">Media</th>
       </tr>

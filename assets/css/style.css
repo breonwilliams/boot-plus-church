@@ -213,6 +213,10 @@ img {
     background-attachment: fixed;
 }
 
+.dataTables_paginate .pagination li:first-child.disabled a {
+    padding-left: 12px!important;
+}
+
 .sermonList-wrap {
     list-style-type: none;
     padding: 0;

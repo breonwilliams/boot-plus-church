@@ -97,6 +97,23 @@
                     ]
                 },
                 {
+                    text: 'Sermon Posts',
+                    menu: [
+                        {
+                            text: 'Sermon DataTables',
+                            onclick: function() {
+                                editor.insertContent('[sermon_datatables category="" posts="-1" ptype="sermons" sermon_category=""]');
+                            }
+                        },
+                        {
+                            text: 'Sermon List',
+                            onclick: function() {
+                                editor.insertContent('[sermon_tables category="" posts="-1" ptype="sermons" sermon_category=""]');
+                            }
+                        },
+                    ]
+                },
+                {
                     text: 'Google Map',
                     onclick: function() {
                                 editor.insertContent('[googlemap id="myMap1" height="" zoom="15" lat="35.905160" long="-79.046908" title="The University of North Carolina at Chapel Hill"]');
