@@ -29,7 +29,8 @@ function bootplus_shortcodes_add_scripts() {
       wp_enqueue_style('dataTables-css', $bootplus_shortcodes_directory.'assets/css/datatables/datatables.min.css');
       wp_enqueue_style('dataTables-bootstrap', $bootplus_shortcodes_directory.'assets/css/datatables/dataTables.bootstrap.min.css');
       wp_enqueue_style('dataTables-buttons', $bootplus_shortcodes_directory.'assets/css/datatables/buttons.bootstrap.min.css');
-      wp_enqueue_style('dataTables-responsive', $bootplus_shortcodes_directory.'assets/css/datatables/responsive.bootstrap.min.css');
+    wp_enqueue_style('dataTables-responsive', $bootplus_shortcodes_directory.'assets/css/datatables/responsive.bootstrap.min.css');
+    wp_register_style( 'pmenu-style', plugins_url( '/assets/css/menu/style.css', __FILE__ ), array(), '1.0.0', all );
         }}
 add_filter('init', 'bootplus_shortcodes_add_scripts');
 
@@ -56,7 +57,8 @@ function wpb_adding_scripts() {
     wp_register_script( 'pdfmake-js', $bootplus_shortcodes_directory.'assets/js/datatables/pdfmake.min.js', 'jquery','1.0',true);
     wp_register_script( 'vfs_fonts-js', $bootplus_shortcodes_directory.'assets/js/datatables/vfs_fonts.js', 'jquery','1.0',true);
     wp_register_script( 'responsive-js', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables.responsive.min.js', 'jquery','1.0',true);
-    wp_register_script( 'responsive-bootstrap', $bootplus_shortcodes_directory.'assets/js/datatables/responsive.bootstrap.min.js', 'jquery','1.0',true);
+  wp_register_script( 'responsive-bootstrap', $bootplus_shortcodes_directory.'assets/js/datatables/responsive.bootstrap.min.js', 'jquery','1.0',true);
+  wp_register_script( 'pmenu-main', $bootplus_shortcodes_directory.'assets/js/menu/main.js', 'jquery','1.0',true);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 
@@ -115,5 +117,6 @@ include($bootplus_shortcodes_path.'/assets/thumbnails.php');
 include($bootplus_shortcodes_path.'/assets/google-map.php');
 include($bootplus_shortcodes_path.'/assets/recent-sermons.php');
 include($bootplus_shortcodes_path.'/assets/staff-list.php');
+include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
 
 
