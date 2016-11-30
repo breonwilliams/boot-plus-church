@@ -5,6 +5,12 @@
   text-decoration: none
 }
 
+.button:after, .button:before {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
 body {
   background: #fff;
 }

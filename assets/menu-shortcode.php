@@ -11,6 +11,7 @@ register_nav_menus(array(
 function list_menu($atts, $content = null) {
     extract(shortcode_atts(array(
         'menu'            => '',
+        'container'       => '',
         'container_class' => '',
         'container_id'    => 'cssmenu',
         'menu_class'      => 'menu',
@@ -28,6 +29,7 @@ function list_menu($atts, $content = null) {
 
     return wp_nav_menu( array(
         'menu'            => $menu,
+        'container'       => $container,
         'container_class' => $container_class,
         'container_id'    => $container_id,
         'menu_class'      => $menu_class,
@@ -51,13 +53,11 @@ function pushm_wrap( $atts, $content = null ) {
     $atts = shortcode_atts(
         array(
             'class' => '',
-            'label' => '',
         ), $atts, 'custom_div' );
 
     $class = $atts['class'];
-    $label = $atts['label'];
 
-    return '<nav id="cssmenu" class="'.$class.'"><div class="logo"><a href="index.html">'.$label.'</a></div><div id="head-mobile"></div><div class="button"></div>' . do_shortcode($content) . '</nav>';
+    return '<nav id="cssmenu" class="'.$class.'"><div id="head-mobile"></div><div class="button"></div>' . do_shortcode($content) . '</nav>';
 
 }
 
