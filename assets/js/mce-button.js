@@ -143,6 +143,23 @@
                     ]
                 },
                 {
+                    text: 'Custom Menu',
+                    menu: [
+                        {
+                            text: 'Menu Wrapper',
+                            onclick: function() {
+                                editor.insertContent('[pushm_wrap class=""][/pushm_wrap]');
+                            }
+                        },
+                        {
+                            text: 'Menu',
+                            onclick: function() {
+                                editor.insertContent('[listmenu menu="" menu_class=""]');
+                            }
+                        },
+                    ]
+                },
+                {
                     text: 'Login/Logout',
                     menu: [
                         {
