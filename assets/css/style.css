@@ -154,6 +154,14 @@ img {
     margin-top: 35px!important;
 }
 
+.text-white {
+    color: #FFFFFF!important;
+}
+
+.text-black {
+    color: #000000!important;
+}
+
 /* Full width background image section */
 
 .bg-img {
