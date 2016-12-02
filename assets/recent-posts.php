@@ -205,3 +205,59 @@ function carousel_recent_posts( $atts ) {
 }
 
 /*recent posts carousel end*/
+
+    if ( ! function_exists('vpsa_posts_shortcode') ) {
+        function vpsa_posts_shortcode( $atts ){
+
+            $atts = shortcode_atts( array(
+                            'per_page'  =>      2,
+                            'order'     =>  'DESC',
+                            'orderby'   =>  'date'
+                    ), $atts );
+
+            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+            $args = array(
+                'post_type'         =>  'post',
+                'posts_per_page'    =>  $atts["per_page"],
+                'order'             =>  $atts["order"],
+                'orderby'           =>  $atts["orderby"],
+                'paged'             =>  $paged
+            );
+
+            $query = new WP_Query($args);
+                    if($query->have_posts()) : $output;
+
+                        while ($query->have_posts()) : $query->the_post();
+
+
+                                $output .= '';
+
+
+
+                        endwhile;global $wp_query;
+    $args_pagi = array(
+            'base' => add_query_arg( 'paged', '%#%' ),
+            'total' => $query->max_num_pages,
+            'current' => $paged
+            );
+                        $output .= '<div class="post-nav">';
+                            $output .= paginate_links( $args_pagi);
+
+                        //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';
+
+                        $output .= '</div>';
+
+                    else:
+
+                        $output .= '<p>Sorry, there are no posts to display</p>';
+
+                    endif;
+
+                wp_reset_postdata();
+
+                return $output;
+        }
+    }
+
+    add_shortcode('vpsa_posts', 'vpsa_posts_shortcode');

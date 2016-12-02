@@ -61,7 +61,14 @@ function wpb_adding_scripts() {
   wp_register_script( 'pmenu-main', $bootplus_shortcodes_directory.'assets/js/menu/main.js', 'jquery','1.0',true);
 }
 
-add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
+
+function build_js(){
+  if( is_single() && get_post_type()=='sermons' ){
+    wp_enqueue_script( 'lity-js' );
+    }
+}
+add_action('wp_enqueue_scripts', 'build_js');
 
 
 
@@ -70,7 +77,6 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
 
 
-   
 // Add Formats Dropdown Menu To MCE
 if ( ! function_exists( 'wpex_style_select' ) ) {
   function wpex_style_select( $buttons ) {
@@ -118,5 +124,6 @@ include($bootplus_shortcodes_path.'/assets/google-map.php');
 include($bootplus_shortcodes_path.'/assets/recent-sermons.php');
 include($bootplus_shortcodes_path.'/assets/staff-list.php');
 include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
+include($bootplus_shortcodes_path.'/assets/templates.php');
 
 
