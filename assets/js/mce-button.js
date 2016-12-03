@@ -108,7 +108,7 @@
                         {
                             text: 'Sermon List',
                             onclick: function() {
-                                editor.insertContent('[sermon_tables category="" posts="-1" ptype="sermons" sermon_category=""]');
+                                editor.insertContent('[sermon_tables category=""  per_page="8" ptype="sermons" sermon_category=""]');
                             }
                         },
                     ]
