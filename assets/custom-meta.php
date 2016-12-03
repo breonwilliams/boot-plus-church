@@ -15,6 +15,30 @@ function meta_box_slider()
                   'page',              // Show box for posts, pages, custom, etc.
                   'normal',            // Where on the page to show the box
                   'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'slider-meta-box-id', // ID attribute of metabox
+        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'post',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'slider-meta-box-id', // ID attribute of metabox
+        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'sermons',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'slider-meta-box-id', // ID attribute of metabox
+        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'staff',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
 }
 
 function meta_box_callback( $post )
@@ -26,7 +50,7 @@ function meta_box_callback( $post )
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
-        <label for="meta_box_slider_embed"><p>Insert your slider shortcode here.</p></label>
+        <label for="meta_box_slider_embed"><p>This will display below the header.</p></label>
 
         <?php wp_editor($meta_box_slider_embed, 'biography', array(
             'wpautop'               =>      true,
@@ -100,11 +124,34 @@ add_action( 'add_meta_boxes', 'meta_box_map' );
 function meta_box_map()
 {                                      // --- Parameters: ---
     add_meta_box( 'map-meta-box-id', // ID attribute of metabox
-                  'Full Width Map Shortcode',       // Title of metabox visible to user
+                  'Full Width Footer Shortcode',       // Title of metabox visible to user
                   'meta_box_callback_map', // Function that prints box in wp-admin
                   'page',              // Show box for posts, pages, custom, etc.
                   'normal',            // Where on the page to show the box
                   'high' );            // Priority of box in display order
+    add_meta_box(
+        'map-meta-box-id', // ID attribute of metabox
+        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'post',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'map-meta-box-id', // ID attribute of metabox
+        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'sermons',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'map-meta-box-id', // ID attribute of metabox
+        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'staff',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
 }
 
 function meta_box_callback_map( $post )
@@ -116,7 +163,7 @@ function meta_box_callback_map( $post )
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
-        <label for="meta_box_map_embed"><p>Insert your map shortcode here.</p></label>
+        <label for="meta_box_map_embed"><p>This will display above the footer.</p></label>
         <?php wp_editor($meta_box_map_embed, 'mapp', array(
             'wpautop'               =>      true,
             'media_buttons' =>      false,
