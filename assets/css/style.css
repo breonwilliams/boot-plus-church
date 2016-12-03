@@ -224,6 +224,22 @@ img {
 .dataTables_paginate .pagination li:first-child.disabled a {
     padding-left: 12px!important;
 }
+.post-nav {
+    padding-left: 0!important;
+    margin-bottom: 15px;
+}
+.post-nav a, .post-nav span {
+    font-family: "Montserrat", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 7px;
+    padding: 5px 12px;
+    background-color: transparent;
+    border-radius: 0!important;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    border: 1px solid #ddd;
+}
 
 .respList-wrap {
     list-style-type: none;
