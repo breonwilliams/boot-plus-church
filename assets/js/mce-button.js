@@ -68,13 +68,13 @@
                         {
                             text: 'Recent Posts Thumbnails',
                             onclick: function() {
-                                editor.insertContent('[thumb_recent_posts class="" column="" category="" posts="2" ptype=""]');
+                                editor.insertContent('[thumb_recent_posts per_page="1" column="col-md-4" class="" ptype="staff" per_page="4"]');
                             }
                         },
                         {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
-                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
+                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="staff" per_page="8"]');
                             }
                         },
                     ]
