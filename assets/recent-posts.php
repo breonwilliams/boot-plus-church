@@ -202,6 +202,8 @@ if ( ! function_exists('carousel_recent_posts') ) {
 
 
 /*recent posts carousel end*/
+
+/*recent posts thumb start*/
 if ( ! function_exists('thumb_recent_posts') ) {
         function thumb_recent_posts( $atts ){
 
@@ -295,3 +297,5 @@ if ( ! function_exists('thumb_recent_posts') ) {
     }
 
     add_shortcode('thumb_recent_posts', 'thumb_recent_posts');
+
+/*recent posts thumb end*/

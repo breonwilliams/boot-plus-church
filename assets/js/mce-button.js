@@ -85,13 +85,13 @@
                         {
                             text: 'Staff Posts Thumbnails',
                             onclick: function() {
-                                editor.insertContent('[staff_posts class="" column="" category="" posts="2" ptype="" role=""]');
+                                editor.insertContent('[staff_posts class="" column="" category="" posts="2" ptype="staff" role=""]');
                             }
                         },
                         {
                             text: 'Staff Posts Tables',
                             onclick: function() {
-                                editor.insertContent('[staff_tables category="" posts="2" ptype="" role=""]');
+                                editor.insertContent('[staff_tables category="" posts="2" ptype="staff" role=""]');
                             }
                         },
                     ]
