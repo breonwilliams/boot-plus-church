@@ -58,7 +58,7 @@ function sermon_datatables( $atts ) {
 
                 <tr>
                     <td scope="row">
-                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
+                        <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
                     </td>
                     <td>
                         <?php if( get_field('scripture') ): ?>
