@@ -128,4 +128,8 @@ include($bootplus_shortcodes_path.'/assets/staff-list.php');
 include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
 include($bootplus_shortcodes_path.'/assets/templates.php');
 
+//include($bootplus_shortcodes_path.'/assets/cpt-ui/post-types.php');
+//include($bootplus_shortcodes_path.'/assets/cpt-ui/taxonomies.php');
+//include($bootplus_shortcodes_path.'/assets/custom-fields/field-groups.php');
+
 
