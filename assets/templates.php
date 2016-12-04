@@ -6,22 +6,22 @@
  * Time: 3:09 PM
  */
 
-add_filter( 'template_include', 'insert_sermons_template' );
+function get_custom_post_type_template_staff($single_template) {
+    global $post;
 
-function insert_sermons_template( $template )
-{
-    if ( 'sermons' === get_post_type() )
-        return dirname( __FILE__ ) . '/plugin_template/single-sermons.php';
-
-    return $template;
+    if ($post->post_type == 'staff') {
+        $single_template = dirname( __FILE__ ) .  '/plugin_template/single-staff.php';
+    }
+    return $single_template;
 }
+add_filter( 'single_template', 'get_custom_post_type_template_staff' );
 
-add_filter( 'template_include', 'insert_staff_template' );
+function get_custom_post_type_template_sermons($single_template) {
+    global $post;
 
-function insert_staff_template( $template )
-{
-    if ( 'staff' === get_post_type() )
-        return dirname( __FILE__ ) . '/plugin_template/single-staff.php';
-
-    return $template;
+    if ($post->post_type == 'sermons') {
+        $single_template = dirname( __FILE__ ) .  '/plugin_template/single-sermons.php';
+    }
+    return $single_template;
 }
+add_filter( 'single_template', 'get_custom_post_type_template_sermons' );
