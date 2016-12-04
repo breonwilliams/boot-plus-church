@@ -3,17 +3,6 @@
  * Custom functions
  */
 
-
-
-
-
-
-
-
-
-
-
-
 if ( ! function_exists('list_recent_posts') ) {
     function list_recent_posts( $atts ){
 
@@ -114,23 +103,6 @@ add_shortcode('list_recent_posts', 'list_recent_posts');
 /*recent posts list end*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*recent posts carousel start*/
 
 if ( ! function_exists('carousel_recent_posts') ) {
@@ -227,16 +199,6 @@ if ( ! function_exists('carousel_recent_posts') ) {
     }
 
     add_shortcode('carousel_recent_posts', 'carousel_recent_posts');
-
-
-
-
-
-
-
-
-
-
 
 
 
