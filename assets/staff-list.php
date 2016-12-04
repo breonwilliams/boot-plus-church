@@ -88,6 +88,8 @@ function staff_tables( $atts ) {
         'category' => '',
         'ptype' => 'staff',
         'role' => '',
+        'order'     =>  '',
+        'orderby'   =>  '',
     ), $atts ) );
 
 
@@ -97,6 +99,8 @@ function staff_tables( $atts ) {
         'post_type' => $ptype,
         'category_name' => $category,
         'role' => $role,
+        'order' =>  $order,
+        'orderby' =>  $orderby,
     );
     $query = new WP_Query( $options );
     // run the loop based on the query

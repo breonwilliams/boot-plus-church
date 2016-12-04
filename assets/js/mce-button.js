@@ -108,7 +108,7 @@
                         {
                             text: 'Sermon List',
                             onclick: function() {
-                                editor.insertContent('[sermon_tables category=""  per_page="8" ptype="sermons" sermon_category=""]');
+                                editor.insertContent('[sermon_tables category=""  class="" per_page="8" ptype="sermons" sermon_category=""]');
                             }
                         },
                     ]
@@ -158,6 +158,12 @@
                             }
                         },
                     ]
+                },
+                {
+                    text: 'Search Overlay',
+                    onclick: function() {
+                        editor.insertContent('[search_overlay]');
+                    }
                 },
                 {
                     text: 'Login/Logout',

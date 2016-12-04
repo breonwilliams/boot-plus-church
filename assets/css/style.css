@@ -249,5 +249,10 @@ img {
 
 .respList-wrap .resplist-item {
     border-bottom: solid 1px #eeeeee;
+    padding: 30px 0 15px;
+}
+
+.respList-wrap .resplist-item:last-child {
+    border-bottom: none;
 }
 

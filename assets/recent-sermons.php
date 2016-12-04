@@ -28,6 +28,8 @@ function sermon_datatables( $atts ) {
         'category' => '',
         'ptype' => 'sermons',
         'sermon_category' => '',
+        'order'     =>  '',
+        'orderby'   =>  '',
     ), $atts ) );
 
 
@@ -37,6 +39,8 @@ function sermon_datatables( $atts ) {
         'post_type' => $ptype,
         'category_name' => $category,
         'sermon_category' => $sermon_category,
+        'order'             =>  $order,
+        'orderby'           =>  $orderby,
     );
     $query = new WP_Query( $options );
     // run the loop based on the query
@@ -128,7 +132,7 @@ if ( ! function_exists('sermon_tables') ) {
 
         $query = new WP_Query($args);
 
-        $output .= '<ul class="respList-wrap">';
+        $output .= '<ul class="' . $class . ' respList-wrap">';
 
         if($query->have_posts()) : $output;
 
