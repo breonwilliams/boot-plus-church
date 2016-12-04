@@ -63,6 +63,7 @@ function sermon_datatables( $atts ) {
                 <tr>
                     <td scope="row">
                         <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+                        <span><?php echo get_the_date(); ?> </span>
                     </td>
                     <td>
                         <?php if( get_field('scripture') ): ?>
@@ -145,6 +146,9 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '<div class="col-sm-6">';
 
                 $output .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
+                $output .= '<span class="sermon-date">';
+                $output .= get_the_date();
+                $output .= '</span>';
                 $output .= '</div>';
                 $output .= '<div class="col-sm-6">';
                 if ( get_field('scripture' )) {
