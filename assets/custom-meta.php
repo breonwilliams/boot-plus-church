@@ -225,3 +225,19 @@ function full_below_content_area(){
 
 
 }
+
+
+// Custom Menu logo
+
+function m3_customize_register( $wp_customize ) {
+    $wp_customize->add_setting( 'm3_logo' ); // Add setting for logo uploader
+
+    // Add control for logo uploader (actual uploader)
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm3_logo', array(
+        'label'    => __( 'Upload Custom Menu Logo', 'm3' ),
+        'section'  => 'title_tagline',
+        'settings' => 'm3_logo',
+        'priority' => 35,
+    ) ) );
+}
+add_action( 'customize_register', 'm3_customize_register' );

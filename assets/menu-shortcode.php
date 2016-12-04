@@ -57,7 +57,20 @@ function pushm_wrap( $atts, $content = null ) {
 
     $class = $atts['class'];
 
-    return '<nav id="cssmenu" class="'.$class.'"><div id="head-mobile"></div><div class="button"></div>' . do_shortcode($content) . '</nav>';
+    $output .= '<nav id="cssmenu" class="'.$class.'">';
+    if ( get_theme_mod( 'm3_logo' ) ) {
+        $output .= '<div class="logo"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';
+        $output .= '<img src="' . get_theme_mod( 'm3_logo' ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">';
+        $output .= '</a></div>';
+
+    } else {
+        $output .= '<div class="logo"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';
+        $output .= '' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '';
+        $output .= '</a></div>';
+    }
+    $output .= '<div id="head-mobile"></div><div class="button"></div>' . do_shortcode($content) . '</nav>';
+
+    return $output;
 
 }
 
