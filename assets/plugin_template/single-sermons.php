@@ -14,10 +14,10 @@
                     </div>
                     <div class="col-xs-6 text-right">
                         <?php if( get_field('video') ): ?>
-                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-md marginbot-15" data-lity>Video <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
+                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-md marginbot-15" data-lity>Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
                         <?php endif; ?>
                         <?php if( get_field('audio') ): ?>
-                            <a href="<?php the_field('audio'); ?>" data-lity class="btn btn-bordered btn-primary btn-md marginbot-15">Audio <i class="fa fa-headphones" aria-hidden="true"></i></a>
+                            <a href="<?php the_field('audio'); ?>" data-lity class="btn btn-bordered btn-primary btn-md marginbot-15">Listen Now <i class="fa fa-headphones" aria-hidden="true"></i></a>
                         <?php endif; ?>
                         <?php if( get_field('document') ): ?>
                             <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-md marginbot-15">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>

@@ -77,10 +77,10 @@ function sermon_datatables( $atts ) {
                     </td>
                     <td>
                         <?php if( get_field('video') ): ?>
-                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Video <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
+                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
                         <?php endif; ?>
                         <?php if( get_field('audio') ): ?>
-                            <a href="<?php the_field('audio'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Audio <i class="fa fa-headphones" aria-hidden="true"></i></a>
+                            <a href="<?php the_field('audio'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Listen Now <i class="fa fa-headphones" aria-hidden="true"></i></a>
                         <?php endif; ?>
                         <?php if( get_field('document') ): ?>
                             <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>
@@ -174,7 +174,7 @@ if ( ! function_exists('sermon_tables') ) {
 
                 if ( get_field('video' )) {
                     $output .= '<li><a href="' . get_field('video') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>';
-                    $output .= 'Video <i class="fa fa-video-camera" aria-hidden="true"></i> ';
+                    $output .= 'Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> ';
                     $output .= '</a></li>';
 
                 } else {
@@ -182,7 +182,7 @@ if ( ! function_exists('sermon_tables') ) {
 
                 if ( get_field('audio' )) {
                     $output .= '<li><a href="' . get_field('audio') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>';
-                    $output .= 'Audio <i class="fa fa-headphones" aria-hidden="true"></i> ';
+                    $output .= 'Listen Now <i class="fa fa-headphones" aria-hidden="true"></i> ';
                     $output .= '</a></li>';
 
                 } else {
