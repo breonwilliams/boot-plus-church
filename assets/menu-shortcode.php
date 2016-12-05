@@ -53,7 +53,7 @@ function pushm_wrap( $atts, $content = null ) {
     $atts = shortcode_atts(
         array(
             'class' => '',
-        ), $atts, 'custom_div' );
+        ), $atts, 'pushm_wrap' );
 
     $class = $atts['class'];
 
