@@ -6,6 +6,9 @@
 /*staff thumbnail start*/
 if ( ! function_exists('staff_posts') ) {
     function staff_posts( $atts ){
+        wp_enqueue_style( 'masonry-css' );
+        wp_enqueue_script( 'masonry-min' );
+        wp_enqueue_script( 'masonry-init' );
 
         $atts = shortcode_atts( array(
             'ptype' => '',
@@ -33,13 +36,13 @@ if ( ! function_exists('staff_posts') ) {
 
         $query = new WP_Query($args);
 
-        $output .= '<div class="row '.$class.'">';
+        $output .= '<div class="row mgrid '.$class.'">';
 
         if($query->have_posts()) : $output;
 
             while ($query->have_posts()) : $query->the_post();
 
-                $output .= '<div id="post-' . get_the_ID() . '" class="'.$column.' ' . implode(' ', get_post_class()) . '">';
+                $output .= '<div id="post-' . get_the_ID() . '" class="mgrid-item '.$column.' ' . implode(' ', get_post_class()) . '">';
 
                 $output .= '<div class="thumbnail">';
 
@@ -56,7 +59,7 @@ if ( ! function_exists('staff_posts') ) {
 
                 }
 
-                $output .= '<div class="caption caption-fixedh">';
+                $output .= '<div class="caption padbot-30">';
 
                 $output .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
 
