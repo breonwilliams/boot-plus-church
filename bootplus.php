@@ -122,7 +122,6 @@ include($bootplus_shortcodes_path.'/assets/custom-meta.php');
 include($bootplus_shortcodes_path.'/assets/recent-events.php');
 include($bootplus_shortcodes_path.'/assets/recent-posts.php');
 include($bootplus_shortcodes_path.'/assets/thumbnails.php');
-include($bootplus_shortcodes_path.'/assets/google-map.php');
 include($bootplus_shortcodes_path.'/assets/recent-sermons.php');
 include($bootplus_shortcodes_path.'/assets/staff-list.php');
 include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
