@@ -4,76 +4,122 @@
  */
 
 /*staff thumbnail start*/
-add_shortcode( 'staff_posts', 'staff_posts' );
-function staff_posts( $atts ) {
+if ( ! function_exists('staff_posts') ) {
+    function staff_posts( $atts ){
 
-    ob_start();
-    // define attributes and their defaults
-    extract( shortcode_atts( array (
-        'posts' => 4,
-        'category' => '',
-        'ptype' => 'staff',
-        'class' => '',
-        'column' => '',
-        'role' => '',
-    ), $atts ) );
+        $atts = shortcode_atts( array(
+            'ptype' => '',
+            'per_page'  =>      2,
+            'order'     =>  'DESC',
+            'orderby'   =>  'date',
+            'category' => '',
+            'class' => '',
+            'column' => '',
+        ), $atts );
 
-    $class = $atts['class'];
-    $column = $atts['column'];
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-    // define query parameters based on attributes
-    $options = array(
-        'posts_per_page' => $posts,
-        'post_type' => $ptype,
-        'category_name' => $category,
-        'role' => $role,
-    );
-    $query = new WP_Query( $options );
-    // run the loop based on the query
-    if ( $query->have_posts() ) { ?>
+        $class = $atts['class'];
+        $column = $atts['column'];
 
-        <?php echo ' <div class="row staff-list '.$class.'"> '; ?>
+        $args = array(
+            'post_type'    =>  $atts["ptype"],
+            'posts_per_page'    =>  $atts["per_page"],
+            'order'             =>  $atts["order"],
+            'orderby'           =>  $atts["orderby"],
+            'paged'             =>  $paged,
+            'category_name' => $category
+        );
 
+        $query = new WP_Query($args);
 
-            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        $output .= '<div class="row '.$class.'">';
 
-             <?php echo ' <div class="'.$column.'"> '; ?>
-                <div class="thumbnail">
-                    <?php if(has_post_thumbnail()): ?>
-                        <a class="thumbnail-link" href="<?php the_permalink(); ?>">
-                            <div class="thumbnail-img">
-                                <?php if ( has_post_thumbnail() ) { the_post_thumbnail('post_thumbnail_square'); } ?>
-                            </div>
-                        </a>
+        if($query->have_posts()) : $output;
 
-                    <?php else: ?>
+            while ($query->have_posts()) : $query->the_post();
 
-                    <?php endif; ?>
+                $output .= '<div id="post-' . get_the_ID() . '" class="'.$column.' ' . implode(' ', get_post_class()) . '">';
 
-                    <div class="caption caption-fixedh">
-                        <h3 class="thumb-heading"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-                        <?php if( get_field('staff_title') ): ?>
-                        <p><strong><?php the_field('staff_title'); ?></strong></p>
-                        <?php endif; ?>
-                        <?php if( get_field('email') ): ?>
-                        <p><a href="mailto:<?php the_field('email'); ?>" class="staff_email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></p>
-                        <?php endif; ?>
-                        <?php if( get_field('phone_number') ): ?>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('phone_number'); ?></p>
-                        <?php endif; ?>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <?php endwhile;
-            wp_reset_postdata(); ?>
+                $output .= '<div class="thumbnail">';
 
 
-        </div>
-        <?php $myvariable = ob_get_clean();
-        return $myvariable;
+
+                if ( has_post_thumbnail() ) {
+
+                    $output .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
+                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                    $output .= '</a>';
+
+                } else {
+
+
+                }
+
+                $output .= '<div class="caption caption-fixedh">';
+
+                $output .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
+
+                if ( get_field('staff_title' )) {
+                    $output .= '<p><strong>';
+                    $output .= '' . get_field('staff_title') . '';
+                    $output .= '</strong></p>';
+
+                } else {
+                }
+
+                if ( get_field('email' )) {
+                    $output .= '<p><a href="mailto:' . get_field('email') . '" class="staff_email">';
+                    $output .= '<i class="fa fa-envelope" aria-hidden="true"></i> Email ';
+                    $output .= '</a></p>';
+
+                } else {
+                }
+
+                if ( get_field('phone_number' )) {
+                    $output .= '<p><i class="fa fa-phone" aria-hidden="true"></i>';
+                    $output .= '' . get_field('phone_number') . '';
+                    $output .= '</p>';
+
+                } else {
+                }
+
+                $output .= '<div class="clearfix"></div>';
+                $output .= '</div>';
+
+
+                $output .= '</div>';
+                $output .= '</div>';
+
+            endwhile;global $wp_query;
+            $output .= '</div>';
+
+            $args_pagi = array(
+                'base' => add_query_arg( 'paged', '%#%' ),
+                'total' => $query->max_num_pages,
+                'current' => $paged
+            );
+            $output .= '<div class="clearfix"></div>';
+
+            $output .= '<div class="post-nav col-md-12">';
+            $output .= paginate_links( $args_pagi);
+
+            //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';
+
+            $output .= '</div>';
+
+        else:
+
+            $output .= '<p>Sorry, there are no posts to display</p>';
+
+        endif;
+        wp_reset_postdata();
+
+        return $output;
     }
 }
+
+add_shortcode('staff_posts', 'staff_posts');
 
 /*staff thumbnail end*/
 
@@ -152,5 +198,3 @@ function staff_tables( $atts ) {
 }
 
 /*staff table end*/
-
-

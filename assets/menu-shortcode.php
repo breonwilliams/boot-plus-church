@@ -64,7 +64,7 @@ function pushm_wrap( $atts, $content = null ) {
         $output .= '</a></div>';
 
     } else {
-        $output .= '<div class="logo"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';
+        $output .= '<div class="logo logo-text"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';
         $output .= '' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '';
         $output .= '</a></div>';
     }

@@ -74,7 +74,7 @@
                         {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
-                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="staff" per_page="8"]');
+                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="" per_page="8"]');
                             }
                         },
                     ]
@@ -85,7 +85,7 @@
                         {
                             text: 'Staff Posts Thumbnails',
                             onclick: function() {
-                                editor.insertContent('[staff_posts class="" column="" category="" posts="2" ptype="staff" role=""]');
+                                editor.insertContent('[staff_posts class="" column="" category="" per_page="8" ptype="staff" role=""]');
                             }
                         },
                         {
