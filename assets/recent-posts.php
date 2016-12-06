@@ -161,14 +161,15 @@ if ( ! function_exists('carousel_recent_posts') ) {
 
                                             }
 
-                                        $output .= '<div class="caption padbot-30">';
+                                        $output .= '<div class="caption caption-fixedh">';
 
                                 $output .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
 
                                         $output .= get_the_excerpt();
 
-                                        $output .= '<div class="clearfix"></div>';
                                         $output .= '</div>';
+                            $output .= '<div class="clearfix"></div>';
+
 
 
                             $output .= '</div>';
@@ -272,8 +273,8 @@ if ( ! function_exists('thumb_recent_posts') ) {
 
                                         $output .= get_the_excerpt();
 
-                                        $output .= '<div class="clearfix"></div>';
                                         $output .= '</div>';
+                            $output .= '<div class="clearfix"></div>';
 
 
                             $output .= '</div>';

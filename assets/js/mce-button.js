@@ -68,7 +68,7 @@
                         {
                             text: 'Recent Posts Thumbnails',
                             onclick: function() {
-                                editor.insertContent('[thumb_recent_posts column="col-md-4" class="" ptype="staff" per_page="4"]');
+                                editor.insertContent('[thumb_recent_posts column="col-md-4" class="" ptype="" per_page="4"]');
                             }
                         },
                         {

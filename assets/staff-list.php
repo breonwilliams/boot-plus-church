@@ -61,7 +61,7 @@ if ( ! function_exists('staff_posts') ) {
 
                 }
 
-                $output .= '<div class="caption padbot-30">';
+                $output .= '<div class="caption caption-fixedh">';
 
                 $output .= '<h3 class="post-title st-full-name"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
 
@@ -89,8 +89,9 @@ if ( ! function_exists('staff_posts') ) {
                 } else {
                 }
 
-                $output .= '<div class="clearfix"></div>';
                 $output .= '</div>';
+                $output .= '<div class="clearfix"></div>';
+
 
 
                 $output .= '</div>';
