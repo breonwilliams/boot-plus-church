@@ -13,11 +13,13 @@ if ( ! function_exists('list_recent_posts') ) {
             'orderby'   =>  'date',
             'category' => '',
             'class' => '',
+            'pagination' => '',
         ), $atts );
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
         $class = $atts['class'];
+        $pagination = $atts['pagination'];
 
         $args = array(
             'post_type'    =>  $atts["ptype"],
@@ -80,7 +82,7 @@ if ( ! function_exists('list_recent_posts') ) {
                 'current' => $paged
             );
 
-            $output .= '<div class="post-nav col-md-12">';
+            $output .= '<div class="post-nav col-md-12 ' . $pagination . '">';
             $output .= paginate_links( $args_pagi);
 
             //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';
@@ -111,19 +113,21 @@ if ( ! function_exists('carousel_recent_posts') ) {
         wp_enqueue_script( 'slick-init' );
 
             $atts = shortcode_atts( array(
-                            'ptype' => '',
-                            'per_page'  =>      2,
-                            'order'     =>  'DESC',
-                            'orderby'   =>  'date',
-                            'category' => '',
-                            'class' => '',
-                            'column' => '',
+                'ptype' => '',
+                'per_page'  =>      2,
+                'order'     =>  'DESC',
+                'orderby'   =>  'date',
+                'category' => '',
+                'class' => '',
+                'column' => '',
+                'pagination' => '',
                     ), $atts );
 
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
             $class = $atts['class'];
             $column = $atts['column'];
+            $pagination = $atts['pagination'];
 
             $args = array(
                 'post_type'    =>  $atts["ptype"],
@@ -180,7 +184,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
             );
                                         $output .= '<div class="clearfix"></div>';
 
-                        $output .= '<div class="post-nav col-md-12">';
+                        $output .= '<div class="post-nav col-md-12 ' . $pagination . '">';
                             $output .= paginate_links( $args_pagi);
 
                         //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';
@@ -212,19 +216,21 @@ if ( ! function_exists('thumb_recent_posts') ) {
             wp_enqueue_script( 'masonry-init' );
 
             $atts = shortcode_atts( array(
-                            'ptype' => '',
-                            'per_page'  =>      2,
-                            'order'     =>  'DESC',
-                            'orderby'   =>  'date',
-                            'category' => '',
-                            'class' => '',
-                            'column' => '',
+                'ptype' => '',
+                'per_page'  =>      2,
+                'order'     =>  'DESC',
+                'orderby'   =>  'date',
+                'category' => '',
+                'class' => '',
+                'column' => '',
+                'pagination' => '',
                     ), $atts );
 
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
             $class = $atts['class'];
             $column = $atts['column'];
+            $pagination = $atts['pagination'];
 
             $args = array(
                 'post_type'    =>  $atts["ptype"],
@@ -283,7 +289,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
             );
                                         $output .= '<div class="clearfix"></div>';
 
-                        $output .= '<div class="post-nav col-md-12">';
+                        $output .= '<div class="post-nav col-md-12 ' . $pagination . '">';
                             $output .= paginate_links( $args_pagi);
 
                         //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';

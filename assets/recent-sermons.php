@@ -116,11 +116,13 @@ if ( ! function_exists('sermon_tables') ) {
             'category' => '',
             'class' => '',
             'column' => '',
+            'pagination' => '',
         ), $atts );
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
         $class = $atts['class'];
+        $pagination = $atts['pagination'];
 
         $args = array(
             'post_type'    =>  $atts["ptype"],
@@ -214,7 +216,7 @@ if ( ! function_exists('sermon_tables') ) {
             );
             $output .= '<div class="clearfix"></div>';
 
-            $output .= '<div class="post-nav col-md-12">';
+            $output .= '<div class="post-nav col-md-12 ' . $pagination . '">';
             $output .= paginate_links( $args_pagi);
 
             //    $output .= '<div class="next-page">' . get_next_posts_link( "Older Entries »", 3 ) . '</div>';
