@@ -67,23 +67,23 @@ function sermon_datatables( $atts ) {
                     </td>
                     <td>
                         <?php if( get_field('scripture') ): ?>
-                            <p><em><?php the_field('scripture'); ?></em></p>
+                            <p class="s-scripture"><em><?php the_field('scripture'); ?></em></p>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php if( get_field('speaker') ): ?>
-                            <p><?php the_field('speaker'); ?></p>
+                            <p class="s-speaker"><?php the_field('speaker'); ?></p>
                         <?php endif; ?>
                     </td>
                     <td>
                         <?php if( get_field('video') ): ?>
-                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
+                            <a href="<?php the_field('video'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-video" data-lity>Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> </a>
                         <?php endif; ?>
                         <?php if( get_field('audio') ): ?>
-                            <a href="<?php the_field('audio'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>Listen Now <i class="fa fa-headphones" aria-hidden="true"></i></a>
+                            <a href="<?php the_field('audio'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-audio" data-lity>Listen Now <i class="fa fa-headphones" aria-hidden="true"></i></a>
                         <?php endif; ?>
                         <?php if( get_field('document') ): ?>
-                            <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>
+                            <a href="<?php the_field('document'); ?>" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-document">Doc <i class="fa fa-file-o" aria-hidden="true"></i></a>
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -154,7 +154,9 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '</div>';
                 $output .= '<div class="col-sm-6">';
                 if ( get_field('scripture' )) {
+                    $output .= '<p clas="s-scripture">';
                     $output .= get_field('scripture');
+                    $output .= '</p>';
                 } else {
                 }
                 $output .= '</div>';
@@ -166,7 +168,9 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '<div class="col-md-4 col-sm-6">';
 
                 if ( get_field('speaker' )) {
+                    $output .= '<p clas="s-speaker">';
                     $output .= get_field('speaker');
+                    $output .= '</p>';
                 } else {
                 }
 
@@ -175,7 +179,7 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '<ul class="list-inline">';
 
                 if ( get_field('video' )) {
-                    $output .= '<li><a href="' . get_field('video') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>';
+                    $output .= '<li><a href="' . get_field('video') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-video" data-lity>';
                     $output .= 'Watch Now <i class="fa fa-video-camera" aria-hidden="true"></i> ';
                     $output .= '</a></li>';
 
@@ -183,14 +187,14 @@ if ( ! function_exists('sermon_tables') ) {
                 }
 
                 if ( get_field('audio' )) {
-                    $output .= '<li><a href="' . get_field('audio') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15" data-lity>';
+                    $output .= '<li><a href="' . get_field('audio') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-audio" data-lity>';
                     $output .= 'Listen Now <i class="fa fa-headphones" aria-hidden="true"></i> ';
                     $output .= '</a></li>';
 
                 } else {
                 }
                 if ( get_field('document' )) {
-                    $output .= '<li><a href="' . get_field('document') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15">';
+                    $output .= '<li><a href="' . get_field('document') . '" class="btn btn-bordered btn-primary btn-sm marginbot-15 s-document">';
                     $output .= 'Doc <i class="fa fa-file-o" aria-hidden="true"></i> ';
                     $output .= '</a></li>';
 

@@ -63,10 +63,10 @@ if ( ! function_exists('staff_posts') ) {
 
                 $output .= '<div class="caption padbot-30">';
 
-                $output .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
+                $output .= '<h3 class="post-title st-full-name"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
 
                 if ( get_field('staff_title' )) {
-                    $output .= '<p><strong>';
+                    $output .= '<p class="st-title"><strong>';
                     $output .= '' . get_field('staff_title') . '';
                     $output .= '</strong></p>';
 
@@ -74,7 +74,7 @@ if ( ! function_exists('staff_posts') ) {
                 }
 
                 if ( get_field('email' )) {
-                    $output .= '<p><a href="mailto:' . get_field('email') . '" class="staff_email">';
+                    $output .= '<p class="st-email"><a href="mailto:' . get_field('email') . '" class="staff_email">';
                     $output .= '<i class="fa fa-envelope" aria-hidden="true"></i> Email ';
                     $output .= '</a></p>';
 
@@ -82,7 +82,7 @@ if ( ! function_exists('staff_posts') ) {
                 }
 
                 if ( get_field('phone_number' )) {
-                    $output .= '<p><i class="fa fa-phone" aria-hidden="true"></i>';
+                    $output .= '<p class="st-phone"><i class="fa fa-phone" aria-hidden="true"></i> ';
                     $output .= '' . get_field('phone_number') . '';
                     $output .= '</p>';
 
@@ -173,21 +173,23 @@ function staff_tables( $atts ) {
 
 <tr>
         <td scope="row">
-          <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
+            <h3 class="st-full-name">
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
+            </h3>
         </td>
         <td>
           <?php if( get_field('staff_title') ): ?>
-                        <p><strong><?php the_field('staff_title'); ?></strong></p>
+                        <p class="st-title"><strong><?php the_field('staff_title'); ?></strong></p>
                         <?php endif; ?>
         </td>
         <td>
           <?php if( get_field('email') ): ?>
-                        <p><a href="mailto:<?php the_field('email'); ?>" class="staff_email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></p>
+                        <p class="st-email"><a href="mailto:<?php the_field('email'); ?>" class="staff_email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></p>
                         <?php endif; ?>
         </td>
         <td>
           <?php if( get_field('phone_number') ): ?>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('phone_number'); ?></p>
+                        <p class="st-phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('phone_number'); ?></p>
                         <?php endif; ?>
         </td>
       </tr>
