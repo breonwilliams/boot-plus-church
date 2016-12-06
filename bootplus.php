@@ -26,13 +26,10 @@ function bootplus_shortcodes_add_scripts() {
     wp_register_style( 'bgvid-css', plugins_url( '/assets/css/background-vid.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'slick-css', plugins_url( '/assets/css/slick.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'slick-theme', plugins_url( '/assets/css/slick-theme.css', __FILE__ ), array(), '1.0.0', all );
-
     wp_register_style( 'dataTables-css', plugins_url( '/assets/css/datatables/datatables.min.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'dataTables-bootstrap', plugins_url( '/assets/css/datatables/dataTables.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'dataTables-buttons', plugins_url( '/assets/css/datatables/buttons.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'dataTables-responsive', plugins_url( '/assets/css/datatables/responsive.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
-
-
     wp_register_style( 'pmenu-style', plugins_url( '/assets/css/menu/style.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'search-css', plugins_url( '/assets/css/search-overlay.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'masonry-css', plugins_url( '/assets/css/masonry/styles.css', __FILE__ ), array(), '1.0.0', all );
@@ -67,6 +64,8 @@ function wpb_adding_scripts() {
   wp_register_script( 'search-overlay', $bootplus_shortcodes_directory.'assets/js/search-overlay.js', 'jquery','1.0',true);
   wp_register_script( 'masonry-min', $bootplus_shortcodes_directory.'assets/js/masonry/masonry.pkgd.min.js', 'jquery','1.0',true);
   wp_register_script( 'masonry-init', $bootplus_shortcodes_directory.'assets/js/masonry/masonry-init.js', 'jquery','1.0',true);
+  wp_register_script( 'imagesLoaded-js', $bootplus_shortcodes_directory.'assets/js/masonry/imagesLoaded.pkgd.min.js', 'jquery','1.0',true);
+  wp_register_script( 'imagesLoaded-init', $bootplus_shortcodes_directory.'assets/js/masonry/imagesloaded-init.js', 'jquery','1.0',true);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
