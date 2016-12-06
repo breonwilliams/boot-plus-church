@@ -6,6 +6,7 @@
 
 /* set the [events-tribe-list] shortcode */
 function ckhp_get_tribe_list($atts) {
+    wp_enqueue_style( 'events-css' );
 
     if ( !function_exists( 'tribe_get_events' ) ) {
         return;
@@ -75,6 +76,7 @@ add_shortcode('events-tribe-list', 'ckhp_get_tribe_list'); // link new function 
 
 /* set the [events-tribe-list] shortcode */
 function ckhp_get_tribe_list2($atts) {
+    wp_enqueue_style( 'events-css' );
 
     if ( !function_exists( 'tribe_get_events' ) ) {
         return;

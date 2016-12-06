@@ -168,7 +168,8 @@ add_shortcode('search_overlay', 'search_overlay');
 
 function background_vid( $atts, $content = null ) {
     wp_enqueue_script( 'bgvid' );  
-    wp_enqueue_script( 'bgvid-js' ); 
+    wp_enqueue_script( 'bgvid-js' );
+    wp_enqueue_style( 'bgvid-css' );
 
     $atts = shortcode_atts(
         array(
@@ -265,6 +266,7 @@ add_shortcode('boot_modal', 'boot_modal');
 
 function popup_video( $atts, $content = null ) {
     wp_enqueue_script( 'lity-js' );
+    wp_enqueue_style( 'lity-css' );
 
     $atts = shortcode_atts(
         array(

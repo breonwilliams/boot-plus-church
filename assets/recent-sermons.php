@@ -21,6 +21,10 @@ function sermon_datatables( $atts ) {
     wp_enqueue_script( 'responsive-js' );
     wp_enqueue_script( 'responsive-bootstrap' );
     wp_enqueue_script( 'lity-js' );
+    wp_enqueue_style( 'dataTables-css' );
+    wp_enqueue_style( 'dataTables-bootstrap' );
+    wp_enqueue_style( 'dataTables-buttons' );
+    wp_enqueue_style( 'dataTables-responsive' );
     ob_start();
     // define attributes and their defaults
     extract( shortcode_atts( array (

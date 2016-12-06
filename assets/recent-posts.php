@@ -109,8 +109,10 @@ add_shortcode('list_recent_posts', 'list_recent_posts');
 
 if ( ! function_exists('carousel_recent_posts') ) {
         function carousel_recent_posts( $atts ){
-        wp_enqueue_script( 'slick-js' );
-        wp_enqueue_script( 'slick-init' );
+            wp_enqueue_script( 'slick-js' );
+            wp_enqueue_script( 'slick-init' );
+            wp_enqueue_style( 'slick-css' );
+            wp_enqueue_style( 'slick-theme' );
 
             $atts = shortcode_atts( array(
                 'ptype' => '',
