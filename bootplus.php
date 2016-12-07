@@ -73,6 +73,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 function build_js(){
   if( is_single() && get_post_type()=='sermons' ){
     wp_enqueue_script( 'lity-js' );
+    wp_enqueue_style( 'lity-css' );
     }
 }
 add_action('wp_enqueue_scripts', 'build_js');
