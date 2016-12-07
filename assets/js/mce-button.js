@@ -140,15 +140,15 @@
                     text: 'Custom Menu',
                     menu: [
                         {
-                            text: 'Menu Wrapper',
+                            text: 'Responsive Menu',
                             onclick: function() {
-                                editor.insertContent('[pushm_wrap class=""][/pushm_wrap]');
+                                editor.insertContent('[pushm_wrap class=""][listmenu menu="" menu_class=""][/pushm_wrap]');
                             }
                         },
                         {
-                            text: 'Menu',
+                            text: 'Pop-out Menu',
                             onclick: function() {
-                                editor.insertContent('[listmenu menu="" menu_class=""]');
+                                editor.insertContent('[popout_wrap class=""][secondaryPopout_menu menu=""][/popout_wrap]');
                             }
                         },
                     ]

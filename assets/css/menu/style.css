@@ -41,11 +41,6 @@ header {
   color: #fff;
 }
 
-nav {
-  position: relative;
-  margin: 0 auto;
-}
-
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -155,7 +150,8 @@ nav {
 
 #cssmenu ul ul {
   position: absolute;
-  left: -9999px
+  left: -9999px;
+  z-index: 9999;
 }
 
 #cssmenu ul ul li {
