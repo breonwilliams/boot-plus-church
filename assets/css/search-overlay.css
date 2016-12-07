@@ -108,7 +108,7 @@
 }
 
 .mk-fullscreen-search-overlay {
-    z-index: 999;
+    z-index: 9999;
 }
 
 .mk-fullscreen-search-overlay .mk-fullscreen-close:link,

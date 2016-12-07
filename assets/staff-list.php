@@ -7,6 +7,8 @@
 if ( ! function_exists('staff_posts') ) {
     function staff_posts( $atts ){
         wp_enqueue_style( 'masonry-css' );
+        wp_enqueue_script( 'imagesLoaded-js' );
+        wp_enqueue_script( 'imagesLoaded-init' );
         wp_enqueue_script( 'masonry-min' );
         wp_enqueue_script( 'masonry-init' );
 
