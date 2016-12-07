@@ -68,6 +68,7 @@ if ( ! function_exists('list_recent_posts') ) {
                 $output .= '</div>';
 
                 $output .= '</div>';
+                $output .= '<div class="clearfix"></div>';
 
 
             $output .= '</li>';
