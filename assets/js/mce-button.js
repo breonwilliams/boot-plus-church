@@ -185,6 +185,12 @@
                             onclick: function() {
                                 editor.insertContent('[boot_logoutbtn linktext="Log Out" class="btn btn-primary"]');
                             }
+                        },
+                        {
+                            text: 'Password Reset',
+                            onclick: function() {
+                                editor.insertContent('[password_form]');
+                            }
                         }
                     ]
                 }
