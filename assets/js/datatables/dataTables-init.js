@@ -3,7 +3,9 @@ jQuery(function ($) {
   //Normally set in the title tag of your page.
   //document.title='Simple DataTable';
   // DataTable initialisation
-  $('#sermonTable').DataTable(
+    $.fn.dataTable.moment( 'HH:mm MMM D, YY' );
+    $.fn.dataTable.moment( 'dddd, MMMM Do, YYYY' );
+    $('#sermonTable').DataTable(
       {
         "dom": '<"dt-buttons"Bf><"clear">lirtp',
         "paging": true,
@@ -11,7 +13,8 @@ jQuery(function ($) {
         "responsive": true,
         "buttons": [
 
-        ]
+        ],
+          "order": [[ 0, 'desc' ]]
       }
   );
 });

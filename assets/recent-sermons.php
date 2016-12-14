@@ -24,6 +24,9 @@ function sermon_datatables( $atts ) {
     wp_enqueue_style( 'dataTables-bootstrap' );
     wp_enqueue_style( 'dataTables-buttons' );
     wp_enqueue_style( 'dataTables-responsive' );
+    wp_enqueue_script( 'moment-js' );
+    wp_enqueue_script( 'datetime-js' );
+
     wp_enqueue_script( 'lity-js' );
     wp_enqueue_style( 'lity-css' );
     ob_start();
@@ -54,10 +57,11 @@ function sermon_datatables( $atts ) {
         <table id="sermonTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th class="col-md-3">Sermon Title</th>
-                <th class="col-md-3">Scripture</th>
-                <th class="col-md-3">Speaker</th>
-                <th class="col-md-3">Media</th>
+                <th>Sermon Date</th>
+                <th>Sermon Title</th>
+                <th>Scripture</th>
+                <th>Speaker</th>
+                <th>Media</th>
             </tr>
             </thead>
             <tbody>
@@ -67,8 +71,10 @@ function sermon_datatables( $atts ) {
 
                 <tr>
                     <td scope="row">
+                        <span><?php echo get_the_date('D, F jS, Y'); ?> </span>
+                    </td>
+                    <td scope="row">
                         <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-                        <span><?php echo get_the_date(); ?> </span>
                     </td>
                     <td>
                         <?php if( get_field('scripture') ): ?>

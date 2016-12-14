@@ -60,6 +60,9 @@ function wpb_adding_scripts() {
   wp_register_script( 'pdfmake-js', $bootplus_shortcodes_directory.'assets/js/datatables/pdfmake.min.js', 'jquery','1.0',true);
   wp_register_script( 'vfs_fonts-js', $bootplus_shortcodes_directory.'assets/js/datatables/vfs_fonts.js', 'jquery','1.0',true);
   wp_register_script( 'responsive-js', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables.responsive.min.js', 'jquery','1.0',true);
+  wp_register_script( 'moment-js', $bootplus_shortcodes_directory.'assets/js/datatables/moment.min.js', 'jquery','1.0',true);
+  wp_register_script( 'datetime-js', $bootplus_shortcodes_directory.'assets/js/datatables/datetime-moment.js', 'jquery','1.0',true);
+
   wp_register_script( 'responsive-bootstrap', $bootplus_shortcodes_directory.'assets/js/datatables/responsive.bootstrap.min.js', 'jquery','1.0',true);
   wp_register_script( 'pmenu-main', $bootplus_shortcodes_directory.'assets/js/menu/main.js', 'jquery','1.0',true);
   wp_register_script( 'popOut-menu', $bootplus_shortcodes_directory.'assets/js/menu/popOut-main.js', 'jquery','1.0',true);
