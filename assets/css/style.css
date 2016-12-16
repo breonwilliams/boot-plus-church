@@ -138,6 +138,10 @@ img {
     margin-bottom: 35px!important;
 }
 
+.marginbot-40 {
+    margin-bottom: 40px!important;
+}
+
 .margintop-15 {
     margin-top: 15px!important;
 }
@@ -152,6 +156,10 @@ img {
 
 .margintop-35 {
     margin-top: 35px!important;
+}
+
+.margintop-40 {
+    margin-top: 40px!important;
 }
 
 .text-white {
@@ -204,6 +212,15 @@ img {
     width: auto!important;
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.fill-height {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item .height-100 {
+    flex: 1;
 }
 
 @media screen and (max-width: 768px) {

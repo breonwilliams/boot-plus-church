@@ -10,35 +10,35 @@ add_action( 'add_meta_boxes', 'meta_box_slider' );
 function meta_box_slider()
 {                                      // --- Parameters: ---
     add_meta_box( 'slider-meta-box-id', // ID attribute of metabox
-                  'Full Width Slider Shortcode',       // Title of metabox visible to user
+                  'Full Width Section Below Header Shortcode',       // Title of metabox visible to user
                   'meta_box_callback', // Function that prints box in wp-admin
                   'page',              // Show box for posts, pages, custom, etc.
                   'normal',            // Where on the page to show the box
-                  'high' );            // Priority of box in display order
+                  'low' );            // Priority of box in display order
 
     add_meta_box(
         'slider-meta-box-id', // ID attribute of metabox
-        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'Full Width Section Below Header Shortcode',       // Title of metabox visible to user
         'meta_box_callback', // Function that prints box in wp-admin
         'post',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 
     add_meta_box(
         'slider-meta-box-id', // ID attribute of metabox
-        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'Full Width Section Below Header Shortcode',       // Title of metabox visible to user
         'meta_box_callback', // Function that prints box in wp-admin
         'sermons',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 
     add_meta_box(
         'slider-meta-box-id', // ID attribute of metabox
-        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'Full Width Section Below Header Shortcode',       // Title of metabox visible to user
         'meta_box_callback', // Function that prints box in wp-admin
         'staff',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 }
 
 function meta_box_callback( $post )
@@ -124,34 +124,34 @@ add_action( 'add_meta_boxes', 'meta_box_map' );
 function meta_box_map()
 {                                      // --- Parameters: ---
     add_meta_box( 'map-meta-box-id', // ID attribute of metabox
-                  'Full Width Footer Shortcode',       // Title of metabox visible to user
+                  'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
                   'meta_box_callback_map', // Function that prints box in wp-admin
                   'page',              // Show box for posts, pages, custom, etc.
                   'normal',            // Where on the page to show the box
-                  'high' );            // Priority of box in display order
+                  'low' );            // Priority of box in display order
     add_meta_box(
         'map-meta-box-id', // ID attribute of metabox
-        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
         'meta_box_callback_map', // Function that prints box in wp-admin
         'post',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 
     add_meta_box(
         'map-meta-box-id', // ID attribute of metabox
-        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
         'meta_box_callback_map', // Function that prints box in wp-admin
         'sermons',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 
     add_meta_box(
         'map-meta-box-id', // ID attribute of metabox
-        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
         'meta_box_callback_map', // Function that prints box in wp-admin
         'staff',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
-        'high' );            // Priority of box in display order
+        'low' );            // Priority of box in display order
 }
 
 function meta_box_callback_map( $post )
