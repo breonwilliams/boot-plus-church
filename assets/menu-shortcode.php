@@ -4,7 +4,6 @@
  */
 
 register_nav_menus(array(
-    'custom' => __('Custom Shortcode Menu', 'bootstrap-basic'),
     'popOut_primary' => __('Primary Pop-Out Shortcode Menu', 'bootstrap-basic'),
     'popOut_secondary' => __('Secondary Pop-Out Shortcode Menu', 'bootstrap-basic'),
 ));
