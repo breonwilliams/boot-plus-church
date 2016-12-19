@@ -55,7 +55,7 @@ if ( ! function_exists('staff_posts') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_square', array('class' => 'img-responsive aligncenter'));
                     $output .= '</a>';
 
                 } else {
