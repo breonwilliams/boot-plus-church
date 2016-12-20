@@ -138,20 +138,9 @@
                 },
                 {
                     text: 'Custom Menu',
-                    menu: [
-                        {
-                            text: 'Responsive Menu',
-                            onclick: function() {
-                                editor.insertContent('[pushm_wrap class=""][listmenu menu="" menu_class=""][/pushm_wrap]');
-                            }
-                        },
-                        {
-                            text: 'Pop-out Menu',
-                            onclick: function() {
-                                editor.insertContent('[popout_wrap class=""][secondaryPopout_menu menu=""][/popout_wrap]');
-                            }
-                        },
-                    ]
+                    onclick: function() {
+                        editor.insertContent('[listmenu menu="" menu_class=""]');
+                    }
                 },
                 {
                     text: 'Search Overlay',
