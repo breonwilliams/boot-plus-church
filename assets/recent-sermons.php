@@ -187,7 +187,7 @@ if ( ! function_exists('sermon_tables') ) {
                 }
 
                 $output .= '</div>';
-                $output .= '<div class="col-md-8 col-sm-6">';
+                $output .= '<div class="col-md-8 col-sm-6 text-right">';
                 $output .= '<ul class="list-inline">';
 
                 if ( get_field('video' )) {
