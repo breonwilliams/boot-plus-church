@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-    <div <?php post_class('container'); ?>>
-        <article>
+        <article <?php post_class(); ?>>
 
 
             <main id="main" class="site-main col-md-12" role="main">
@@ -52,5 +51,4 @@
                     </div>
             </main>
         </article>
-    </div>
 <?php get_footer(); ?>

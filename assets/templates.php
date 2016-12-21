@@ -25,3 +25,13 @@ function get_custom_post_type_template_sermons($single_template) {
     return $single_template;
 }
 add_filter( 'single_template', 'get_custom_post_type_template_sermons' );
+
+function get_custom_post_type_template_ministries($single_template) {
+    global $post;
+
+    if ($post->post_type == 'ministries') {
+        $single_template = dirname( __FILE__ ) .  '/plugin_template/single-ministries.php';
+    }
+    return $single_template;
+}
+add_filter( 'single_template', 'get_custom_post_type_template_ministries' );

@@ -129,6 +129,7 @@ if ( ! function_exists('sermon_tables') ) {
             'class' => '',
             'column' => '',
             'pagination' => '',
+            'sermon_category' => '',
         ), $atts );
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -141,6 +142,7 @@ if ( ! function_exists('sermon_tables') ) {
             'posts_per_page'    =>  $atts["per_page"],
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
+            'sermon_category' => $atts["sermon_category"],
             'paged'             =>  $paged,
             'category_name' => $category
         );

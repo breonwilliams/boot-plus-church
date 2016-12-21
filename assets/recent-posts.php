@@ -14,6 +14,7 @@ if ( ! function_exists('list_recent_posts') ) {
             'category' => '',
             'class' => '',
             'pagination' => '',
+            'ministry_category' => '',
         ), $atts );
 
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -27,6 +28,7 @@ if ( ! function_exists('list_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
+            'ministry_category'           =>  $atts["ministry_category"],
             'category_name' => $category
         );
 
@@ -124,6 +126,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
                 'class' => '',
                 'column' => '',
                 'pagination' => '',
+                'ministry_category' => '',
                     ), $atts );
 
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -138,6 +141,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
                 'order'             =>  $atts["order"],
                 'orderby'           =>  $atts["orderby"],
                 'paged'             =>  $paged,
+                'ministry_category' => $ministry_category,
                 'category_name' => $category
             );
 
@@ -230,6 +234,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
                 'class' => '',
                 'column' => '',
                 'pagination' => '',
+                'ministry_category' => '',
                     ), $atts );
 
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -244,6 +249,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
                 'order'             =>  $atts["order"],
                 'orderby'           =>  $atts["orderby"],
                 'paged'             =>  $paged,
+                'ministry_category' => $ministry_category,
                 'category_name' => $category
             );
 
