@@ -54,5 +54,28 @@ function cptui_register_my_taxes() {
     );
     register_taxonomy( "sermon_category", array( "sermons" ), $args );
 
+    $labels = array(
+        "name" => __( 'Ministry Categories', '' ),
+        "singular_name" => __( 'Ministry Category', '' ),
+    );
+
+    $args = array(
+        "label" => __( 'Ministry Categories', '' ),
+        "labels" => $labels,
+        "public" => true,
+        "hierarchical" => true,
+        "label" => "Ministry Categories",
+        "show_ui" => true,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "query_var" => true,
+        "rewrite" => array( 'slug' => 'ministry_category', 'with_front' => true, ),
+        "show_admin_column" => false,
+        "show_in_rest" => false,
+        "rest_base" => "",
+        "show_in_quick_edit" => false,
+    );
+    register_taxonomy( "ministry_category", array( "ministries" ), $args );
+
 // End cptui_register_my_taxes()
 }
