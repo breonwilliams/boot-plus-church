@@ -132,6 +132,37 @@ function custom_div( $atts, $content = null ) {
 
 add_shortcode('custom_div', 'custom_div');
 
+/* Percentage Circle */
+
+function perc_circle( $atts, $content = null ) {
+    wp_enqueue_style( 'circle-css' );
+    $atts = shortcode_atts(
+        array(
+            'size' => '',
+            'percent' => '',
+            'class' => '',
+        ), $atts, 'perc_circle' );
+
+    $size = $atts['size'];
+    $percent = $atts['percent'];
+    $class = $atts['class'];
+
+    return '
+
+    <div class="c100 p'.$percent.' '.$size.' '.$class.'">
+                    <span>'.$percent.'%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+    ';
+
+}
+
+add_shortcode('perc_circle', 'perc_circle');
+
 /* Search Overlay */
 
 function search_overlay( $form ) {

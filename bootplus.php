@@ -32,6 +32,7 @@ function bootplus_shortcodes_add_scripts() {
     wp_register_style( 'dataTables-responsive', plugins_url( '/assets/css/datatables/responsive.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'search-css', plugins_url( '/assets/css/search-overlay.css', __FILE__ ), array(), '1.0.0', all );
     wp_register_style( 'masonry-css', plugins_url( '/assets/css/masonry/styles.css', __FILE__ ), array(), '1.0.0', all );
+    wp_register_style( 'circle-css', plugins_url( '/assets/css/circle.css', __FILE__ ), array(), '1.0.0', all );
         }}
 add_filter('init', 'bootplus_shortcodes_add_scripts');
 

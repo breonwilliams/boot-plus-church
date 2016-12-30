@@ -120,6 +120,12 @@
                             }
                 },
                 {
+                    text: 'Percentage Circle',
+                    onclick: function() {
+                        editor.insertContent('[perc_circle size="medium" percent="30" class=""][/perc_circle]');
+                    }
+                },
+                {
                     text: 'Carousel',
                     menu: [
                         {
