@@ -4,7 +4,7 @@
 jQuery(function($) {
         // init Masonry
         var $grid = $('.mgrid').masonry({
-            // options...
+            itemSelector: '.mgrid-item'
         });
 // layout Masonry after each image loads
         $grid.imagesLoaded().progress( function() {
