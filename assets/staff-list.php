@@ -159,48 +159,50 @@ function staff_tables( $atts ) {
     // run the loop based on the query
     if ( $query->have_posts() ) { ?>
 
-        <table id="staffTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th class="col-md-3">Name</th>
-        <th class="col-md-3">Title</th>
-        <th class="col-md-3">Email</th>
-        <th class="col-md-3">Phone Number</th>
-      </tr>
-    </thead>
-    <tbody>
+        <ul class=" respList-wrap">
 
 
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-<tr>
-        <td scope="row">
-            <h3 class="st-full-name">
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
-            </h3>
-        </td>
-        <td>
-          <?php if( get_field('staff_title') ): ?>
-                        <p class="st-title"><strong><?php the_field('staff_title'); ?></strong></p>
-                        <?php endif; ?>
-        </td>
-        <td>
-          <?php if( get_field('email') ): ?>
-                        <p class="st-email"><a href="mailto:<?php the_field('email'); ?>" class="staff_email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></p>
-                        <?php endif; ?>
-        </td>
-        <td>
-          <?php if( get_field('phone_number') ): ?>
-                        <p class="st-phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('phone_number'); ?></p>
-                        <?php endif; ?>
-        </td>
-      </tr>
+
+                <li id="post-<?php the_ID(); ?>" <?php post_class('resplist-item'); ?>>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="st-full-name">
+                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
+                                    </h3>
+                                </div>
+                                <div class="col-sm-6">
+                                    <?php if( get_field('staff_title') ): ?>
+                                        <p class="st-title"><strong><?php the_field('staff_title'); ?></strong></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <?php if( get_field('email') ): ?>
+                                        <p class="st-email"><a href="mailto:<?php the_field('email'); ?>" class="staff_email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-md-8 col-sm-6">
+                                    <?php if( get_field('phone_number') ): ?>
+                                        <p class="st-phone"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('phone_number'); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
             <?php endwhile;
             wp_reset_postdata(); ?>
 
 
-        </tbody>
-  </table>
+        </ul>
         <?php $myvariable = ob_get_clean();
         return $myvariable;
     }
