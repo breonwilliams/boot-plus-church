@@ -53,6 +53,24 @@
   font-weight: 300;
   border: solid 1px #337ab7;
 }
+
+.event-calendar.slick-1 .event-post .event-date {
+  float:left;
+  width:50px!important;
+}
+.event-calendar.slick-1 .event-post .event-date span {
+  font-size: 1.3em!important;
+}
+
+.event-calendar.slick-1  .event-post .event-details {
+  position:relative;
+  float:none!important;
+  width:auto;
+  min-height:1px;
+  padding-left:65px!important;
+  padding-right:15px;
+  font-size:0.85em;
+}
 @media (min-width: 768px) {
   .event-calendar .event-post .event-date {
     float:left;
@@ -85,16 +103,7 @@
   min-height:1px;
   padding-left:15px;
   padding-right:15px;
-  position:relative;
-  min-height:1px;
-  padding-left:15px;
-  padding-right:15px;
-  position:relative;
-  min-height:1px;
-  padding-left:15px;
-  padding-right:15px;
   font-size:0.85em;
-  padding-right:0;
 }
 @media (min-width: 768px) {
   .event-calendar .event-post .event-details {

@@ -89,6 +89,12 @@
                             }
                         },
                         {
+                            text: 'Staff Card',
+                            onclick: function() {
+                                editor.insertContent('[staff_card class="" column="col-md-6" img_column="col-xs-4" content_column="col-xs-8" category="" per_page="8" ptype="staff" role=""]');
+                            }
+                        },
+                        {
                             text: 'Staff Posts Tables',
                             onclick: function() {
                                 editor.insertContent('[staff_tables category="" posts="2" ptype="staff" role=""]');

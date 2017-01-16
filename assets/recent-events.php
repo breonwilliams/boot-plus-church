@@ -143,3 +143,89 @@ function ckhp_get_tribe_list2($atts) {
     return $output;
 }
 add_shortcode('events-tribe-list2', 'ckhp_get_tribe_list2'); // link new function to shortcode name
+
+
+
+/* set the [events-tribe-list] shortcode */
+function ckhp_get_tribe_list3($atts) {
+    wp_enqueue_script( 'slick-js' );
+    wp_enqueue_script( 'slick-init' );
+    wp_enqueue_style( 'slick-css' );
+    wp_enqueue_style( 'slick-theme' );
+
+    wp_enqueue_style( 'events-css' );
+
+    if ( !function_exists( 'tribe_get_events' ) ) {
+        return;
+    }
+
+    global $wp_query, $tribe_ecp, $post;
+    $output='';
+    $ckhp_event_tax = '';
+
+    extract( shortcode_atts( array(
+        'cat' => '',
+        'number' => 5,
+        'class' => '',
+        'error' => 'y'
+    ), $atts, 'ckhp-tribe-events' ), EXTR_PREFIX_ALL, 'ckhp' );
+
+    $class = $atts['class'];
+
+    if ( $ckhp_cat ) {
+        $ckhp_event_tax = array(
+            array(
+                'taxonomy' => 'tribe_events_cat',
+                'field' => 'slug',
+                'terms' => $ckhp_cat
+            )
+        );
+    }
+
+    $posts = tribe_get_events(apply_filters('tribe_events_list_widget_query_args', array(
+        'eventDisplay' => 'upcoming',
+        'posts_per_page' => $ckhp_number,
+        'tax_query'=> $ckhp_event_tax
+    )));
+
+    if(! isset($no_upcoming_events) ) $no_upcoming_events=0; if ( $posts && !$no_upcoming_events) {
+
+        if ( $posts && !$no_upcoming_events) {
+
+            $output .= '<div class="event-calendar '.$class.' slick-1">';
+            foreach( $posts as $post ) :
+                setup_postdata( $post );
+                $output .= '<div id="post-' . get_the_ID() . '" class="single-event ' . implode(' ', get_post_class()) . '">';
+                $output .= '<a href="' . tribe_get_event_link() . '" rel="bookmark">';
+                if ( has_post_thumbnail() ) {
+
+                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive'));
+                    $output .= '<div class="clearfix"></div>';
+
+                } else {
+
+
+                }
+                $output .= '<div class="event-post">';
+                $output .= '<div class="event-date">';
+                $output .= '<time>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'M') . '<span>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'd') . '</span></time>';
+                $output .= '</div>';
+                $output .= '<div class="event-details">';
+                $output .= '<p>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'l') . ' ' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'g:i a') . '</p>';
+                $output .= '<h4 class="media-heading">' . '<a href="' . tribe_get_event_link() . '" rel="bookmark">' . get_the_title() . '</a>' . '</h4>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</a>';
+                $output .= '</div>';
+            endforeach;
+            $output .= '</div><!-- .hfeed -->';
+            $output .= '<p class="tribe-events-widget-link"><a class="btn btn-primary btn-sm" href="' . tribe_get_events_link() . '" rel="bookmark">' . translate( 'View All Events', 'tribe-events-calendar' ) . '</a></p>';
+
+        }} else { //No Events were Found
+        $output .= ( $ckhp_error == 'y' ? '<p>' . translate( 'There are no upcoming events at this time.', 'tribe-events-calendar' ) . '</p>' : '' ) ;
+    } // endif
+
+    wp_reset_query();
+    return $output;
+}
+add_shortcode('events-tribe-list3', 'ckhp_get_tribe_list3'); // link new function to shortcode name
