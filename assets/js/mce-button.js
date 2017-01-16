@@ -51,10 +51,27 @@
                             }
                 },
                 {
-                    text: 'Recent Events',
-                    onclick: function() {
+                    text: 'Recent Event',
+                    menu: [
+                        {
+                            text: 'Recent Events List 1',
+                            onclick: function() {
                                 editor.insertContent('[events-tribe-list cat="" number="2"]');
                             }
+                        },
+                        {
+                            text: 'Recent Events List 2',
+                            onclick: function() {
+                                editor.insertContent('[events-tribe-list2 cat="" number="2"]');
+                            }
+                        },
+                        {
+                            text: 'Recent Events Carousel',
+                            onclick: function() {
+                                editor.insertContent('[events-tribe-list3 cat="" number="2"]');
+                            }
+                        },
+                    ]
                 },
                 {
                     text: 'Recent Posts',
