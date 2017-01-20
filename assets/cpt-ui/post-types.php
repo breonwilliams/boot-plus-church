@@ -56,7 +56,9 @@ function cptui_register_my_cpts() {
         "rewrite" => array( "slug" => "sermons", "with_front" => true ),
         "query_var" => true,
 
-        "supports" => array( "title", "editor", "thumbnail", "excerpt" ),					);
+        "supports" => array( "title", "editor", "thumbnail", "excerpt" ),
+        "taxonomies" => array( "post_tag" ),
+    );
     register_post_type( "sermons", $args );
 
     $labels = array(
@@ -82,7 +84,7 @@ function cptui_register_my_cpts() {
         "rewrite" => array( "slug" => "ministries", "with_front" => true ),
         "query_var" => true,
 
-        "supports" => array( "title", "editor", "thumbnail", "excerpt" ),					);
+        "supports" => array( "title", "editor", "thumbnail", "excerpt", "page-attributes" ),					);
     register_post_type( "ministries", $args );
 
 // End of cptui_register_my_cpts()
