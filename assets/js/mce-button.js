@@ -94,6 +94,12 @@
                                 editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="" per_page="8"]');
                             }
                         },
+                        {
+                            text: 'Related Posts Masonry',
+                            onclick: function() {
+                                editor.insertContent('[relatedposts ptype="sermons" max="4" column="col-md-4" class="" orderby="rand" label="Related Sermons"]');
+                            }
+                        },
                     ]
                 },
                 {

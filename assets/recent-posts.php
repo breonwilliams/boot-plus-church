@@ -321,3 +321,92 @@ if ( ! function_exists('thumb_recent_posts') ) {
     add_shortcode('thumb_recent_posts', 'thumb_recent_posts');
 
 /*recent posts thumb end*/
+
+/* related posts */
+
+/* [relatedposts] // This is the default (3 posts, 3 columns)
+[relatedposts col=1 max=1 excerpt=false] // single post, full width, without the excerpt */
+
+add_shortcode('relatedposts', 'fphp_get_related_posts');
+
+function fphp_get_related_posts($atts) {
+    wp_enqueue_style( 'masonry-css' );
+    wp_enqueue_script( 'imagesLoaded-js' );
+    wp_enqueue_script( 'masonry-min' );
+    wp_enqueue_script( 'masonry-init' );
+
+    $atts = shortcode_atts( array(
+        'ptype' => '',
+        'max' => '3',
+        'class' => '',
+        'column' => '',
+        'label' => '',
+    ), $atts, 'relatedposts' );
+
+    $class = $atts['class'];
+    $column = $atts['column'];
+    $label = $atts['label'];
+
+    $reset_post = $post;
+
+    global $post;
+    $post_tags = wp_get_post_tags($post->ID);
+
+    if ($post_tags) {
+        $post_tag_ids = array();
+        foreach($post_tags as $post_tag) $post_tag_ids[] = $post_tag->term_id;
+        $args=array(
+            'tag__in' => $post_tag_ids,
+            'post__not_in' => array($post->ID),
+            'posts_per_page' => $atts['max'],
+            'post_type'    =>  $atts["ptype"],
+            'orderby' => 'rand'
+        );
+
+        $related_query = new wp_query( $args );
+        if (intval($related_query->post_count) === 0) return '';
+
+        $html = '<div class="relatedposts"><h3>'.$label.'</h3><ul>';
+
+        $html .= '<div class="row mgrid '.$class.'">';
+
+        while( $related_query->have_posts() ) {
+            $related_query->the_post();
+            $html .= '<div id="post-' . get_the_ID() . '" class="mgrid-item '.$column.' ' . implode(' ', get_post_class()) . '">';
+
+            $html .= '<div class="thumbnail">';
+
+            if ( has_post_thumbnail() ) {
+
+                $html .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
+                $html .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                $html .= '</a>';
+
+            } else {
+
+
+            }
+
+            $html .= '<div class="caption caption-fixedh">';
+
+            $html .= '<h3 class="post-title"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
+
+            $html .= get_the_excerpt();
+
+            $html .= '</div>';
+            $html .= '<div class="clearfix"></div>';
+
+
+
+            $html .= '</div>';
+            $html .= '</div>';
+        }
+    }
+    $post = $reset_post;
+    wp_reset_query();
+
+    $html .= '</div>';
+
+    return $html;
+
+}
