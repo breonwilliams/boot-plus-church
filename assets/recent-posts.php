@@ -366,7 +366,7 @@ function fphp_get_related_posts($atts) {
         $related_query = new wp_query( $args );
         if (intval($related_query->post_count) === 0) return '';
 
-        $html = '<div class="relatedposts"><h3>'.$label.'</h3><ul>';
+        $html = '<div class="relatedposts"><h3>'.$label.'</h3>';
 
         $html .= '<div class="row mgrid '.$class.'">';
 
