@@ -13,6 +13,7 @@ if ( ! function_exists('staff_posts') ) {
 
         $atts = shortcode_atts( array(
             'ptype' => '',
+            'role' => '',
             'per_page'  =>      2,
             'order'     =>  'DESC',
             'orderby'   =>  'date',
@@ -30,6 +31,7 @@ if ( ! function_exists('staff_posts') ) {
 
         $args = array(
             'post_type'    =>  $atts["ptype"],
+            'role'              => $atts["role"],
             'posts_per_page'    =>  $atts["per_page"],
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
@@ -140,6 +142,7 @@ if ( ! function_exists('staff_card') ) {
 
         $atts = shortcode_atts( array(
             'ptype' => '',
+            'role' => '',
             'per_page'  =>      2,
             'order'     =>  'DESC',
             'orderby'   =>  'date',
@@ -161,6 +164,7 @@ if ( ! function_exists('staff_card') ) {
 
         $args = array(
             'post_type'    =>  $atts["ptype"],
+            'role'              => $atts["role"],
             'posts_per_page'    =>  $atts["per_page"],
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
