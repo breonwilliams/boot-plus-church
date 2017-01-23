@@ -39,6 +39,14 @@ function meta_box_slider()
         'staff',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
         'low' );            // Priority of box in display order
+
+    add_meta_box(
+        'slider-meta-box-id', // ID attribute of metabox
+        'Full Width Section Below Header Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'ministries',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'low' );            // Priority of box in display order
 }
 
 function meta_box_callback( $post )
@@ -150,6 +158,14 @@ function meta_box_map()
         'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
         'meta_box_callback_map', // Function that prints box in wp-admin
         'staff',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'low' );            // Priority of box in display order
+
+    add_meta_box(
+        'map-meta-box-id', // ID attribute of metabox
+        'Full Width Section Above Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'ministries',              // Show box for posts, pages, custom, etc.
         'normal',            // Where on the page to show the box
         'low' );            // Priority of box in display order
 }
