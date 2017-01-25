@@ -30,7 +30,7 @@ function cptui_register_my_cpts() {
         "rewrite" => array( "slug" => "staff", "with_front" => true ),
         "query_var" => true,
 
-        "supports" => array( "title", "editor", "thumbnail", "excerpt" ),					);
+        "supports" => array( "title", "editor", "thumbnail", "excerpt", "page-attributes" ),					);
     register_post_type( "staff", $args );
 
     $labels = array(
