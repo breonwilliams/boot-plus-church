@@ -200,7 +200,7 @@ if ( ! function_exists('staff_card') ) {
                 }
                 $output .= '</div>';
                 $output .= '<div class="'.$content_column.'">';
-                $output .= '<div class="">';
+                $output .= '<div class="caption">';
 
                 $output .= '<h3 class="post-title st-full-name"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h3>';
 
