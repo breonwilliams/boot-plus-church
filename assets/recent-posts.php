@@ -141,7 +141,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
                 'order'             =>  $atts["order"],
                 'orderby'           =>  $atts["orderby"],
                 'paged'             =>  $paged,
-                'ministry_category' => $ministry_category,
+                'ministry_category'           =>  $atts["ministry_category"],
                 'category_name' => $category
             );
 

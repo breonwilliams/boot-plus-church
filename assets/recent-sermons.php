@@ -168,7 +168,7 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '</div>';
                 $output .= '<div class="col-sm-6">';
                 if ( get_field('scripture' )) {
-                    $output .= '<p clas="s-scripture">';
+                    $output .= '<p class="s-scripture">';
                     $output .= get_field('scripture');
                     $output .= '</p>';
                 } else {
@@ -182,7 +182,7 @@ if ( ! function_exists('sermon_tables') ) {
                 $output .= '<div class="col-md-4 col-sm-6">';
 
                 if ( get_field('speaker' )) {
-                    $output .= '<p clas="s-speaker">';
+                    $output .= '<p class="s-speaker">';
                     $output .= get_field('speaker');
                     $output .= '</p>';
                 } else {
